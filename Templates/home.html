@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% block title %}Home - Cyberpunk Portfolio{% endblock %}
+{% block content %}
+<h1 class="neon-text"><span id="typing-text"></span></h1>
+<div class="text-center mt-5" data-aos="fade-up">
+    {% comment %} <h1 class="neon-text glow-animation">Welcome to My Cyberpunk Portfolio</h1> {% endcomment %}
+    <p class="lead subtext">Exploring the future, one line of code at a time.</p>
+    <a href="{% url 'projects' %}" class="btn glow-button">View Projects</a>
+</div>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cyberpunk Portfolio{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="cyberpunk-bg">
+    <!-- Navigation Bar -->
+     
+    <nav class="navbar navbar-expand-lg navbar-dark glass-nav">
+        <div class="container">
+            <a class="navbar-brand neon-text" href="/">CyberPortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="floating-banner">Nagaraju Kodela</div>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="neon-text" data-aos="fade-up">Step Into the Future</h1>
+            <p class="subtext" data-aos="fade-up" data-aos-delay="200">Innovative, Bold, and Cyber-Enhanced Portfolio Experience.</p>
+        </div>
+    </section>
+
+    <!-- Content Block -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <audio id="bg-music" loop autoplay>
+        <source src="{% static 'audio/cyberpunk.mp3' %}" type="audio/mp3">
+    </audio>
+    <button id="toggle-music" class="btn glow-button">Toggle Music</button>
+    
+    <!-- Footer -->
+    <footer class="text-center py-4 glass-footer">
+        <p class="neon-text">&copy; 2025 CyberPortfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "Welcome to My Cyberpunk Portfolio";
+            let index = 0;
+            function typeEffect() {
+                if (index < text.length) {
+                    document.getElementById("typing-text").innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+            typeEffect();
+        });
+
+        const music = document.getElementById("bg-music");
+        const button = document.getElementById("toggle-music");
+            
+        button.addEventListener("click", function () {
+                if (music.paused) {
+                    music.play();
+                    button.innerText = "Pause Music";
+                } else {
+                    music.pause();
+                    button.innerText = "Play Music";
+                }
+        });
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Enhanced Cyberpunk Portfolio Styles */
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Neon Glow Effect */
+.neon-text {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 40px #008;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 40px #008; }
+    to { text-shadow: 0 0 15px #0ff, 0 0 30px #00f, 0 0 60px #00a; }
+}
+
+/* Glassmorphism Navigation Bar */
+.glass-nav {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(0, 255, 255, 0.5);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: #0ff !important;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 8px #0ff;
+    transform: scale(1.15);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.15), transparent);
+    padding: 50px 25px;
+}
+
+.subtext {
+    font-size: 20px;
+    opacity: 0.85;
+    font-weight: 300;
+}
+
+/* Animated Footer */
+.glass-footer {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-top: 2px solid rgba(0, 255, 255, 0.5);
+    padding: 25px;
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+/* Glow Button */
+.glow-button {
+    background: transparent;
+    color: #0ff;
+    border: 2px solid #0ff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+}
+
+.glow-button:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 15px #0ff, 0 0 30px #00f;
+}
