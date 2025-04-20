@@ -9,7 +9,11 @@
         {% for project in projects %}
         <div class="col-md-4 mb-4" data-aos="zoom-in">
             <div class="card project-card">
+                {% if project.image %}
                 <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.name }}">
+              {% else %}
+                <img src="{% static 'images/default.jpg' %}" class="card-img-top" alt="Default image">
+              {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ project.name }}</h5>
                     <p class="card-text">{{ project.description }}</p>

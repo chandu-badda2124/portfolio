@@ -26,6 +26,10 @@ def projects(request):
     projects = Project.objects.all()
     return render(request, 'projects.html', {'projects': projects})
 
+def deleteBlog(request,pk):
+    blog=BlogPost.objects.get(id=pk)
+    blog.delete()
+    return render(request, 'blog_detail.html')
 
 def contact(request):
     if request.method == 'POST':
